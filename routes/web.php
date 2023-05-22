@@ -14,6 +14,8 @@ use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CustomerCustomerDemoController;
 use App\Http\Controllers\EmployeeTerritoryController;
+use App\Http\Controllers\CustomerSearchController;
+use App\Http\Controllers\ShipperCRUDController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,3 +46,9 @@ Route::resource('customer_customer_demos', CustomerCustomerDemoController::class
 Route::resource('employee_territories', EmployeeTerritoryController::class);
 Route::post('/region/{id}', [RegionController::class, 'getRegion'])->name('region.get');
 Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+Route::get('/customers/search', [CustomerSearchController::class, 'search'])->name('customers.search');
+Route::get('/shipperCRUD', [ShipperCRUDController::class, 'index'])->name('shipper.index');
+Route::get('/shipperCRUD/{id}', [ShipperCRUDController::class, 'show'])->name('shipper.show');
+Route::post('/shipperCRUD', [ShipperCRUDController::class, 'store'])->name('shipper.store');
+Route::put('/shipperCRUD/{id}', [ShipperCRUDController::class, 'update'])->name('shipper.update');
+Route::delete('/shipperCRUD/{id}', [ShipperCRUDController::class, 'destroy'])->name('shipper.destroy');

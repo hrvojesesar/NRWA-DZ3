@@ -110,6 +110,25 @@
         </div>
     </form>
 </div>
+<script>
+function addShipper(shipperData) {
+fetch('/shippers', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(shipperData),
+})
+.then(response => response.json())
+.then(data => {
+
+console.log(data);
+})
+.catch(error => {
+console.error('Error:', error);
+});
+}
+</script>
 </body>
 
 </html>

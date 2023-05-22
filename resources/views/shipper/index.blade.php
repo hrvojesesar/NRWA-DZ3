@@ -101,5 +101,54 @@
         </tbody>
     </table>
 </div>
+<script>
+    // Funkcija za dohvaćanje svih shippera
+    function getShippers() {
+        fetch('/shippers', {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Ovdje možete manipulirati podacima shippera (npr. prikazati ih u tablici)
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Funkcija za dohvaćanje jednog shippera po ID-u
+    function getShipperById(shipperId) {
+        fetch(`/shippers/${shipperId}`, {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(data => {
+
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Funkcija za brisanje shippera po ID-u
+    function deleteShipper(shipperId) {
+        fetch(`/shippers/${shipperId}`, {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Ovdje možete manipulirati odgovorom nakon brisanja shippera
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Pozivanje funkcije za dohvaćanje svih shippera
+    getShippers();
+</script>
 </body>
 </html>

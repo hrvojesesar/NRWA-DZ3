@@ -116,5 +116,25 @@
         </div>
     </form>
 </div>
+<script>
+// Funkcija za ažuriranje postojećeg shippera
+function updateShipper(shipperId, updatedShipperData) {
+fetch(`/shippers/${shipperId}`, {
+method: 'PUT',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(updatedShipperData),
+})
+.then(response => response.json())
+.then(data => {
+// Ovdje možete manipulirati odgovorom nakon ažuriranja shippera
+console.log(data);
+})
+.catch(error => {
+console.error('Error:', error);
+});
+}
+</script>
 </body>
 </html>
