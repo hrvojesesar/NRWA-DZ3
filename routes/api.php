@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TerritoyControllerRestAPI;
 use App\Http\Controllers\CustomerDemographicControllerRestAPI;
 use App\Http\Controllers\RegionControllerRestAPI;
 /*
@@ -16,7 +15,6 @@ use App\Http\Controllers\RegionControllerRestAPI;
 |
 */
 
-Route::resource('territory', TerritoyControllerRestAPI::class);
 Route::resource('customerdemographic', CustomerDemographicControllerRestAPI::class);
 Route::resource('region', RegionControllerRestAPI::class);
 
