@@ -8,5 +8,5 @@ If you want to run our Laravel application, you must complete the following step
 6. Run php artisan serve
 
 
-
+If you want to see results of testing in Postman, open RestAPI.pdf
 
